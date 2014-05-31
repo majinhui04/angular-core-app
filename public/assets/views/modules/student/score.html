@@ -1,0 +1,58 @@
+<!-- 成绩表彰 -->
+<div class="student-score-wrapper" >
+    <ul class="round">
+        <li class="clearfix">
+            <span class="left">科目</span>
+            <span class="right arrow">
+                <select name="courseSelect" id="courseSelect" class="course-select-field input-transparent" ng-options="option.id as option.name for option in courseList" ng-change="courseChange()" ng-model="queryData.courseid">
+                </select>
+            </span>
+        </li>
+    </ul> 
+    <div class="score-horizontal-list">
+        <div class="score-horizontal-title">成绩</div>
+        <div class="score-horizontal-cell ng-cloak" ng-repeat="data in dataList">{{data.score}}</div> 
+    </div>
+    <div class="score-horizontal-list score-average-list">
+        <div class="score-horizontal-title">平均分</div>
+        <div class="score-horizontal-cell ng-cloak" ng-repeat="data in dataList">{{data.average}}</div> 
+    </div>
+    <div class="score-chart-tips">
+        <span>成绩:</span>
+        <span>
+            <em class="chart-tips-block chart-tips-colorA"></em> ≧平均分
+        </span>
+        <span>
+            <em class="chart-tips-block chart-tips-colorB"></em>﹤平均分
+        </span>
+        <span>
+            <em class="chart-tips-block chart-tips-colorC"></em> 平均分
+        </span>
+    </div>
+    <div class="score-bar-wrapper">
+        <div class="score-bar-item score-bar-blank">&nbsp;</div>
+        <div class="score-bar-item" ng-repeat="data in dataList">
+            <div class="score-bar-columns">
+                <div class="score-bar-column score-bar-columnL" ng-class="data.barClass" ng-style="data.scoreStyle"></div>
+                <div class="score-bar-column score-bar-columnR score-bar-columnC" ng-style="data.averageStyle"></div>
+            </div>
+            <div class="score-bar-tips">
+                {{ data.time*1000 | date:'MM-dd' }}
+            </div>
+        </div>
+        
+    </div>
+    <div class="score-vertical-list">
+        <div class="score-vertical-item clearfix" ng-repeat="data in dataList">
+            <div class="score-vertical-cellL">
+                <span>{{data.name}}</span>
+                <span>成绩<em ng-class="data.scoreClass">{{data.score}}</em>分</span>
+            </div>
+            <div class="score-vertical-cellR">
+                <span>{{ data.time*1000 | date:'yyyy-MM-dd' }}</span>
+                <span>平均分<em class="scoreC">{{data.average}}</em>分</span>
+            </div>
+        </div>
+    </div>
+    
+</div>

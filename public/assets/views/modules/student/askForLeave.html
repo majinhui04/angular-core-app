@@ -1,0 +1,54 @@
+
+<div class="student-askforleave-wrapper" >
+    <ul class="round">
+        <li class="clearfix">
+            <span class="left">请假类型</span>
+            <span class="right arrow" ng-click="triggerLeaveType()">
+                <select name="leaveType" id="leaveType" class="select-leave-type input-transparent" ng-options="option.id as option.name for option in leaveTypeList" ng-model="formData.typeid">
+                    
+                </select>
+            </span>
+        </li>
+    </ul> 
+    <div class="askforleave-headline">请假时间</div>
+    <ul class="round">
+        <li class="clearfix">
+            <span class="left">开始时间</span>
+            <span class="right arrow">
+                <span >
+                    <input type="date" name="startDate" class="input-transparent" id="startDate" value="2014-05-01" ng-model="formData._startDate">
+                </span>
+                <span>
+                    <input type="time" name="startTime" class="input-transparent" id="startTime" value="08:00" ng-model="formData._startTime" />
+                </span>
+                
+            </span>
+        </li>
+        <li class="clearfix">
+            <span class="left">结束时间</span>
+            <span class="right arrow">
+                <span >
+                    <input type="date" name="endDate" class="input-transparent" id="endDate" value="2014-05-01" ng-model="formData._endDate">
+                </span>
+                <span>
+                    <input type="time" name="endTime" class="input-transparent" id="endTime" value="18:00" ng-model="formData._endTime" />
+                </span>
+            </span>
+        </li>
+    </ul> 
+    <div class="askforleave-headline">请假理由</div>
+    <div>
+        <textarea name="notes"  ng-model="formData.notes" class="askforleave-notes">
+            
+
+        </textarea>
+
+    </div>
+    <div class="form-actions">
+        <button class="m-btn leave-save-btn one-btn" ng-click="save()" ng-disabled="false">提交假条</button>
+
+    </div>
+
+
+    
+</div>

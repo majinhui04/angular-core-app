@@ -1,0 +1,30 @@
+
+<div class="homework-submit-wrapper" >
+    <div class="homework-submit-title clearfix">
+        <span class="homework-attachment-add" id="filePicker">点击添加附件<i class="homework-attachment-icon"></i></span>
+        <span>作业回复</span>
+    </div>
+    <div class="homework-submit-field">
+        <textarea class="homework-submit-textarea" ng-model="formData.reply"></textarea>
+    </div>
+    <div class="homework-attachment-list">
+        <a href="javascript:void(0)" class="homework-attachment-item" ng-repeat="item in homework.config" ng-class="{'image':'homework-attachment-image'}[item._type]">
+            <div class="homework-attachment-thumb">
+                <img ng-src="{{ item._thumb }}" alt="" data-original="{{ item.url }}">
+                <div class="homework-attachment-mask ng-cloak" ng-show="item._complete===false">
+                    <span class="homework-attachment-status" ng-bind="item._statusText"></span>
+                </div>
+
+            </div>
+            <div class="homework-attachment-info">
+                <span class="homework-attachment-name" ng-bind="item._name"></span>
+                <span class="homework-attachment-remove" ng-click="remove(item)">删除</span>
+            </div>
+            
+        </a>
+    </div>
+    <div class="form-actions">
+        <a href="javascript:void(0)" class="m-btn one-btn homework-submit-btn" ng-click="save()"><span>保存</span></a>
+    </div>
+    
+</div>

@@ -1,0 +1,45 @@
+
+<div class="student-absence-wrapper" >
+    <div class="absence-detail-type" ng-class="absence._typeClass" ng-bind="absence.type.name">
+        
+    </div>
+    <div class="absence-detail-box">
+        <p>
+            <span class="absence-detail-label">请假时间 :</span>
+            <span class="ng-cloak">
+                {{ absence.starttime | date: 'yyyy-MM-dd HH:mm' }} 
+                <br>
+                <span style="padding-left:74px;">至</span>
+                <br> 
+                <span style="padding-left:74px;">{{ absence.endtime | date: 'yyyy-MM-dd HH:mm' }}</span>
+            </span>
+        </p>
+        <p>
+            <span class="absence-detail-label">请假原因 :</span>
+            <span ng-bind="absence.notes"></span>
+        </p>
+        <p>
+            <span class="absence-detail-label">假条状态 :</span>
+            <span ng-class="absence._statusClass" ng-bind="{0:'已批假',1:'未审批',2:'已拒绝',3:'已销假'}[absence.checkstatus]"></span>
+        </p>
+    </div> 
+    <!-- <div class="absence-detail-type" ng-class="absence._typeClass">
+        病假
+    </div>
+    <div class="absence-detail-box">
+        <p>
+            <span class="absence-detail-label">请假时间 :</span>
+            <span>2014-04-01 至 2014-05-01</span>
+        </p>
+        <p>
+            <span class="absence-detail-label">请假原因 :</span>
+            <span>法国公司法看电视看发生的开发商发大水净空法师，圣诞节开发商发生的净空法师，
+              发顺丰肯定是浪费发生的开发了发生的第三方是，的，方式，飞，，，，发水电费</span>
+        </p>
+        <p>
+            <span class="absence-detail-label">假条状态 :</span>
+            <span class="absence-status-accept">已审批</span>
+        </p>
+    </div> -->
+    
+</div>

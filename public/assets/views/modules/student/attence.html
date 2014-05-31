@@ -1,0 +1,33 @@
+
+
+    <div class="student-attence-wrapper" >
+        <!-- <div class="attence-list">
+            <div class="attence-item">
+                <span class="attence-time">2014-04-15 08:14:11</span>
+                <span class="attence-source">进校</span>
+                <span class="attence-status">正常</span>
+            </div>
+            <div class="attence-item">
+                <span class="attence-time">2014-04-15 17:14:11</span>
+                <span class="attence-source">离校</span>
+                <span class="attence-status">正常</span>
+            </div>
+            <div class="attence-item">
+                <span class="attence-time">2014-04-16 08:14:11</span>
+                <span class="attence-source">进校</span>
+                <span class="attence-status">正常</span>
+            </div>
+        </div> -->
+        <div class="attence-list ng-cloak">
+            <div class="attence-item " ng-repeat="attence in attenceList">
+                <span class="attence-time">{{ attence.time }}</span>
+                <span class="attence-source">{{ attence.source }}</span>
+                <span class="attence-status">{{ attence.status }}</span>
+            </div>
+            <div class="attence-more-box ng-cloak" ng-click="searchMore()" ng-show="attenceList">
+                <span>点击查看更多</span>
+            </div>
+        </div>
+        <div class="no-data-box ng-cloak" ng-show="attenceList.length==0">暂无数据</div>
+        
+    </div>

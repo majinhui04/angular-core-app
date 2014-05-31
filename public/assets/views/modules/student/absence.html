@@ -1,0 +1,113 @@
+
+<div class="student-absence-wrapper" >
+    <div class="no-data-box ng-cloak" ng-show="absenceList.length==0">暂无数据</div>
+    <div class="absence-list">
+        <div class="absence-item ng-cloak" ng-repeat=" absence in absenceList ">
+            <div class="absence-type" ng-class="absence._typeClass">
+                <span class="absence-type-txt" >
+                    {{ absence.type.name }}
+                </span>
+            </div>
+            <div class="absence-info arrow">
+                <a ng-href="#/student/absence/{{absence.id}}" title="{{absence.notes}}">
+                    <p>
+                        请假时间: <span>{{ absence.starttime | date: 'MM-dd' }}</span> 至 <span>{{ absence.endtime | date: 'MM-dd' }}</span>
+                    </p>
+                    <p>
+                        假条状态: <span class="" ng-bind="{0:'已批假',1:'未审批',2:'已拒绝',3:'已销假'}[absence.checkstatus]" ng-class="absence._statusClass">已审核</span>
+                    </p>
+                </a>
+            </div>
+            
+        </div>
+        <div class="show-more-box absence-more-box ng-cloak" ng-click="showMore()" ng-show="flag">
+            <span>点击查看更多</span>
+        </div>
+
+       <!--  <p>``````````</p>
+       <div class="absence-item">
+           <div class="absence-type absence-type-personal">
+               <span class="absence-type-txt">
+                   事假
+               </span>
+           </div>
+           <div class="absence-info arrow">
+               <p>
+                   请假时间: <span>01-02</span>至<span>01-03</span>
+               </p>
+               <p>
+                   假条状态: <span class="absence-status-accept">已审核</span>
+               </p>
+           </div>
+       
+       </div>
+       <div class="absence-item">
+           <div class="absence-type absence-type-sick">
+               <span class="absence-type-txt">
+                   病假
+               </span>
+           </div>
+           <div class="absence-info arrow">
+               <p>
+                   请假时间: <span>01-02</span>至<span>01-03</span>
+               </p>
+               <p>
+                   假条状态: <span class="absence-status-unread">未审核</span>
+               </p>
+           </div>
+       
+       </div>
+       <div class="absence-item">
+           <div class="absence-type absence-type-others">
+               <span class="absence-type-txt">
+                   其他
+               </span>
+           </div>
+           <div class="absence-info arrow">
+               <p>
+                   请假时间: <span>01-02</span>至<span>01-03</span>
+               </p>
+               <p>
+                   假条状态: <span class="absence-status-reject">已拒绝</span>
+               </p>
+           </div>
+       
+       </div>
+       <div class="absence-item">
+           <div class="absence-type absence-type-sick">
+               <span class="absence-type-txt">
+                   病假
+               </span>
+           </div>
+           <div class="absence-info arrow">
+               <p>
+                   请假时间: <span>01-02</span>至<span>01-03</span>
+               </p>
+               <p>
+                   假条状态: <span class="absence-status-remove">已销假</span>
+               </p>
+           </div>
+       
+       </div>
+       <div class="absence-item">
+           <div class="absence-type absence-type-sick">
+               <span class="absence-type-txt">
+                   病假
+               </span>
+           </div>
+           <div class="absence-info arrow">
+               <p>
+                   请假时间: <span>01-02</span>至<span>01-03</span>
+               </p>
+               <p>
+                   假条状态: <span class="absence-status-remove">已销假</span>
+               </p>
+           </div>
+       
+       </div> -->
+
+    </div>
+   
+
+    
+</div>

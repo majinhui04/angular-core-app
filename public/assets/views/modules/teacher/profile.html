@@ -1,0 +1,22 @@
+<div ng-controller="m.teacher.controller as profile">
+
+    <ul class="nav">
+        <li class="header"><img src="/assets/img/student/header-bg.png" /></li>
+        <li class="avatar" ng-show="profile.form">
+            <img ng-src="{{(profile.form.user.avatar?profile.form.user.avatar+'!72':'')||'/assets/img/public/avatar-80.png'}}" width="72" height="72" />
+            <b ng-bind="profile.form.name"></b>
+        </li>
+    </ul>
+
+    <div class="panel-body">
+        <ul class="list-group" ng-show="profile.form">
+            <li class="list-group-item">
+                <b>性别</b>：{{{0:'未知',1:'男',2:'女'}[profile.form.sex]}}
+            </li>
+            <li class="list-group-item">
+                <b>手机号</b>：{{profile.form.mobile}}
+            </li>
+        </ul>
+    </div>
+
+</div>

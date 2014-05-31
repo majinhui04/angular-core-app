@@ -1,0 +1,1345 @@
+
+/* 个人资料 */
+.page-student-profile {
+    
+}
+.page-student-profile nav{
+    padding-bottom: 15px;
+}
+.page-student-profile ul.round {
+    margin-bottom: 15px;
+}
+.page-student-profile .header {
+    position: relative;
+    padding-bottom: 50px;
+}
+.page-student-profile .banner {
+    text-align: center;
+    height: 170px;
+    overflow: hidden;
+    background-color: #FFD700;
+}
+.page-student-profile .banner img {
+    width: 100%;
+    height: 100%;
+}
+.page-student-profile .touxiang {
+    position: absolute;
+    top: 130px;
+    padding: 0 15px;
+}
+.page-student-profile .touxiang-box {
+    vertical-align: top;
+    display: inline-block;
+    border: 3px solid #FFF;
+    width: 72px;
+    height: 72px;
+    background: url(/assets/img/public/avatar-80.png) no-repeat 0 0 ;
+    background-size: 100% 100%;
+}
+.page-student-profile .touxiang-box img {
+    width: 100%;
+    height: 100%;
+}
+.page-student-profile .touxiang-name {
+    padding-top: 45px;
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: top;
+}
+.page-student-profile .album-thumb-box {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-right: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 1;
+    margin-top: 7px;
+    vertical-align: top;
+    overflow: hidden;
+}
+.page-student-profile .album-thumb-box img {
+    width: 100%;
+    height: 100%;
+}
+/* 学生性别弹出框 */
+.student-sex-modal span.student-sex-label {
+    width: 60px;
+    text-align: right;
+    display: inline-block;
+}
+.student-sex-modal .student-sex-select-box {
+    display: inline-block;
+}
+.student-sex-modal .student-sex-select {
+    line-height: 1.2;
+    width: 120px;
+    margin-left: 15px;
+    height: 30px;
+}
+/* 学生生日弹出框 */
+
+.student-birth-modal .student-birth-select-box {
+    text-align: center;
+}
+.student-birth-modal .student-birth-select:first-child {
+    width: 70px;
+    margin-left: 3px;
+    display: inline-block;
+}
+.student-birth-modal .student-birth-select {
+    line-height: 1.2;
+    width: 52px;
+    margin-left: 3px;
+    display: inline-block;
+    height: 30px;
+}
+
+/* 我的爸妈 */
+.student-parent-wrapper {
+    padding-top: 15px;
+}
+.student-parent-wrapper .form-input-list .input-label {
+    width: 52px;
+}
+.student-parent-wrapper .form-input-list .input-field {
+    margin-left: 52px;
+}
+
+/* 我的老师 */
+.student-teacher-wrapper {
+    padding-bottom: 15px;
+}
+.student-teacher-wrapper .teacher-item {
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.student-teacher-wrapper .teacher-avatar {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: #ccc url(/assets/img/public/avatar-80.png) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+.student-teacher-wrapper .teacher-avatar img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.student-teacher-wrapper .teacher-info {
+    margin-left: 110px;
+}
+.student-teacher-wrapper .teacher-info p {
+    margin: 0;
+    padding: 7px 0;
+}
+.student-teacher-wrapper .teacher-info span {
+    display: inline-block;
+    vertical-align: top;
+    color:#000;
+    font-size: 14px;
+    line-height: 1.2;
+}
+.student-teacher-wrapper .teacher-info .title {
+    width: 45px;
+    text-align:left; 
+}
+.student-teacher-wrapper .teacher-info .content {
+    white-space: normal;
+}
+.student-teacher-wrapper .teacher-info a {
+    color:#000;
+}
+
+/* 用户密码 */
+.user-password-wrapper {
+    padding-top: 15px;
+}
+.user-password-wrapper .form-input-list .input-label {
+    width: 95px;
+}
+.user-password-wrapper .form-input-list .input-field {
+    margin-left: 95px;
+}
+
+
+/* 班级课程表 */
+.class-courese-wrapper {
+    padding-bottom: 15px;
+}
+.class-courese-wrapper .weekday-nav {
+    line-height: 1.5;
+    padding: 10px 0;
+    background-color: #FCEE8D;
+    text-align: center;
+}
+.class-courese-wrapper .weekday-item {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    color:#B29A2D;
+} 
+.class-courese-wrapper .weekday-item span {
+    display: inline-block;
+    padding: 3px 12px;
+    font-weight: bold;
+    vertical-align: top;
+    font-size: 14px;
+}
+.class-courese-wrapper .weekday-item.active span{
+    background-color: #ECCC1F;
+    color: #000;
+    border-radius: 15px;
+
+}
+.class-courese-wrapper .course-item {
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ddd;
+    color: #8c8c8c;
+}
+.class-courese-wrapper .course-item:nth-of-type(even) {
+    background-color: #F9F9FA;
+}
+.class-courese-wrapper .course-item>span {
+    display: inline-block;
+}
+.class-courese-wrapper .course-time {
+    text-indent: 10px;
+    width: 60%;
+}
+.class-courese-wrapper .course-name {
+    width: 20%;
+}
+.class-courese-wrapper .course-teacher {
+    width: 15%;
+}
+/* 学生考勤 */
+.student-attence-wrapper {
+    padding-bottom: 15px;
+}
+.student-attence-wrapper .attence-item {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+    color: #8c8c8c;
+}
+.student-attence-wrapper .attence-item:nth-of-type(even) {
+    background-color: #F9F9FA;
+}
+.student-attence-wrapper .attence-item>span {
+    display: inline-block;
+}
+.student-attence-wrapper .attence-time {
+    text-indent: 15px;
+    width: 65%;
+}
+.student-attence-wrapper .attence-source {
+    width: 15%;
+}
+.student-attence-wrapper .attence-status {
+    width: 15%;
+}
+.student-attence-wrapper .attence-more-box {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 用户相册 */
+.user-album-wrapper {
+
+}
+.user-album-wrapper .album-list {
+
+}
+.user-album-wrapper .album-list-actions {
+    padding: 7px 0;
+    text-align: center;
+}
+.user-album-wrapper .album-add-btn {
+    border: 0;
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    color:#000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #FCD764;
+}
+.user-album-wrapper .album-item {
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.user-album-wrapper .album-item-data { 
+    position: relative;
+    z-index: 2;
+    background-color: #FFF;
+    transition-property:all; 
+    transition-duration:0.1s;
+    -webkit-transition-property:all; 
+    -webkit-transition-duration:0.1s;
+    -moz-transition-property:all; 
+    -moz-transition-duration:0.1s;
+    
+}
+
+.user-album-wrapper .album-item-actions { 
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: 0;
+    font-size: 0;
+    letter-spacing: -3px;
+    white-space: nowrap;
+}
+.user-album-wrapper .album-action-delete ,.user-album-wrapper .album-action-edit{
+    cursor: pointer;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+    letter-spacing:0;
+}
+.user-album-wrapper .album-action-delete {
+    background-color: #FF3B30;
+}
+.user-album-wrapper .album-action-edit {
+    background-color: #5bc0de;
+}
+.user-album-wrapper .album-cover {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 60px;
+    height: 60px;
+    background: #ccc url(/assets/img/public/no-cover-135.jpg) no-repeat 0 0;
+    background-size: 100% 100%;
+}
+.user-album-wrapper .album-cover img {
+    width: 100%;
+    height: 100%;
+}
+.user-album-wrapper .album-info {
+    position: relative;
+    margin-left: 60px;
+    line-height: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.user-album-wrapper .album-info a {
+    text-indent: 15px;
+    font-size: 16px;
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+}
+.user-album-wrapper .album-name {
+    font-weight: 700;
+    color: #000;
+}
+.user-album-wrapper .album-photo-count {
+    color: #8c8c8c;
+    padding-left: 5px;
+}
+.user-album-modal .form-input-list .input-label {
+    width: 60px;
+    line-height: 30px;
+}
+.user-album-modal .form-input-list .input-field {
+    margin-left: 60px;
+}
+
+/* 用户照片列表 */
+.user-photo-wrapper .photo-list {
+    text-align: left;
+    padding: 5px;
+
+}
+.user-photo-wrapper .photo-add-btn ,
+.user-photo-wrapper .photo-edit-btn {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    color:#000;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.user-photo-wrapper .photo-add-btn {
+    background-color: #FCD764;
+}
+.user-photo-wrapper .photo-edit-btn , .user-photo-wrapper .photo-cancel-btn {
+    background-color: #FCEE8D;
+}
+.user-photo-wrapper .photo-item {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    /* width: 75px;
+    height: 75px; */
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid transparent;
+}
+.user-photo-wrapper .photo-wrap {
+    /* width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0; */
+    background-color: #DDD;
+}
+.user-photo-wrapper .photo-item img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.user-photo-wrapper .photo-selected-box {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top:0;
+    background-color: rgba(0,0,0,0.5);
+}
+.user-photo-wrapper .photo-selected-icon {
+    display: block;
+    position: absolute;
+    right: 3px;
+    bottom:3px;
+    width: 25px;
+    height: 25px;
+    background: url(/assets/img/public/photo-selected.png) no-repeat 0 0;
+    background-size: 100%;
+}
+.user-photo-wrapper .photo-actions-box {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(0,0,0,0.3);
+}
+.user-photo-wrapper .photo-actions-box button{
+    width: 80%;
+}
+#photo-preview-modal {
+    left: 0px;
+    top:0;
+    color: #FFF;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 10;
+}
+#photo-preview-modal .photo-preview-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#photo-preview-modal .photo-preview-box img {
+    position: absolute;
+    left:0;
+    top:0;
+    opacity: 0;
+    z-index: 11;
+}
+#photo-preview-modal .photo-preview-loading {
+    z-index: 12;
+    display: inline-block;
+    margin-top: 10%;
+    width: 60px;
+    height: 60px;
+    background: url('/assets/img/mdialog/loading.gif') no-repeat 50% 50%;
+    -webkit-background-size: 20px 20px;
+    background-size: 20px 20px;
+}
+#photo-preview-modal .photo-preview-swipe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 15;
+    left:0;
+    top:0;
+}
+/* 请假考勤 */
+.student-schoolday-wrapper {
+    padding: 15px;
+}
+.student-schoolday-wrapper .round {
+    background-color: #fff;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.student-schoolday-wrapper .round li a{
+    color:#6F6F6F;
+}
+/* 学生请假 */
+.student-askforleave-wrapper {
+    padding: 15px;
+    color: #A1A1A1;
+}
+.student-askforleave-wrapper .round {
+    background-color: #fff;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.student-askforleave-wrapper .round li {
+    position: relative;
+}
+.student-askforleave-wrapper .round .left {
+    position: relative;
+    float:left;
+}
+.student-askforleave-wrapper .round .right {
+    position: relative;
+    float:right;
+}
+.student-askforleave-wrapper .select-leave-type {
+    /* opacity: 0; */
+}
+.student-askforleave-wrapper .askforleave-headline {
+    text-indent: 7px;
+    padding: 7px 0 ;
+}
+.student-askforleave-wrapper .askforleave-notes {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100px;
+    background-color: #FFF;
+    border-radius: 5px;
+    border:1px solid #C2C2C2;
+}
+.student-askforleave-wrapper .form-actions {
+    margin-top: 15px;
+}
+.student-askforleave-wrapper .form-actions .leave-save-btn {
+    background-color: #44AFB7;
+    color: #FFF;
+    background-image: none;
+}
+
+/* 我的假条 */
+.student-absence-wrapper {
+    line-height: 1.2;
+}
+.student-absence-wrapper .absence-item {
+    position: relative;
+    height: 70px;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.student-absence-wrapper .absence-type {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+}
+.student-absence-wrapper .absence-type-txt {
+    display: inline-block;
+    color: #FFF;
+    font-size: 16px;
+    width: 18px;
+    vertical-align: middle;
+    line-height: 1.2;
+    margin-top: 15px;
+}
+.student-absence-wrapper .absence-type-personal {
+    background-color: #D7A920;
+}
+.student-absence-wrapper .absence-type-sick {
+    background-color: #B7454F;
+}
+.student-absence-wrapper .absence-type-others {
+    background-color: #7A215B;
+}
+.student-absence-wrapper .absence-info {
+    margin-left: 50px;
+    height: 100%;
+    font-weight: 700;
+    text-indent: 15px;
+    margin-right: 15px;
+}
+.student-absence-wrapper .absence-info p {
+    padding-top: 10px;
+    margin: 0;
+    color: #525252;
+}
+.student-absence-wrapper .absence-status-accept {
+    color: #638B35;
+}
+.student-absence-wrapper .absence-status-reject {
+    color: red;
+}
+.student-absence-wrapper .absence-status-remove {
+    color: #773E20;
+}
+.student-absence-wrapper .absence-status-unread {
+    color: #D19413;
+}
+
+.student-absence-wrapper .absence-detail-type {
+    width: 180px;
+    height: 35px;
+    line-height: 35px;
+    text-indent: 15px;
+    color: #FFF;
+    font-size: 16px;
+    margin-top: 15px;
+}
+.student-absence-wrapper .absence-detail-box {
+    padding: 0 15px;
+}
+.student-absence-wrapper .absence-detail-label {
+    padding-right: 7px;
+}
+.student-absence-wrapper .absence-detail-box p {
+    padding-top: 10px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+
+/* 我的作业之作业列表 */
+.student-homework-wrapper {
+    padding: 15px;
+}
+.student-homework-wrapper .homework-list {
+
+}
+.student-homework-wrapper .homework-item {
+    display: block;
+    background: #FFF;
+    line-height: 1.5;
+    padding: 15px 10px;
+    padding-bottom: 0;
+    box-shadow: 0 1px 1px #f6f6f6;
+    margin-bottom: 18px;
+    color: #6F6F6F;
+    font-size: 14px;
+    position: relative;
+    
+}
+.student-homework-wrapper .homework-item-bg {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 0;
+    bottom: -5px;
+    background: url(/assets/img/homework/homework-item-bg.png) repeat-x 0 bottom;
+}
+.student-homework-wrapper .homework-category {
+    width: 135px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    margin-bottom: 7px;
+    background-color: #72B5BB;
+    font-size: 16px;
+    text-align: center;
+    color: #FFF;
+    left:-3px;
+}
+.student-homework-wrapper .homework-category-arrow {
+    display: block;
+    position: absolute;
+    width: 28px;
+    height: 21px;
+    background: url(/assets/img/homework/arrow.png) no-repeat 0 0;
+    left: -13px;
+    top:6px;
+}
+.student-homework-wrapper .homework-item:nth-of-type(1) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(6) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(11) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(16) .homework-category {
+    background-color: #E68302;
+}
+.student-homework-wrapper .homework-item:nth-of-type(2) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(7) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(12) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(17) .homework-category {
+    background-color: #7377BE;
+}
+.student-homework-wrapper .homework-item:nth-of-type(3) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(8) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(13) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(18) .homework-category {
+    background-color: #BD72B7;
+}
+.student-homework-wrapper .homework-item:nth-of-type(4) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(9) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(14) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(19) .homework-category {
+    background-color: #72B5BB;
+}
+.student-homework-wrapper .homework-item:nth-of-type(5) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(10) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(15) .homework-category,
+.student-homework-wrapper .homework-item:nth-of-type(20) .homework-category {
+    background-color: #92C10F;
+}
+.student-homework-wrapper .homework-title {
+    margin-bottom: 7px;
+}
+.student-homework-wrapper .homework-content {
+    height: 45px;
+    margin-bottom: 7px;
+    overflow: hidden;
+}
+.student-homework-wrapper .homework-info {
+    position: relative;
+    z-index: 3;
+    height: 30px;
+    line-height: 30px;
+}
+.student-homework-wrapper .homework-info span {
+    margin-right:15px;
+}
+/* 作业详情 */
+.student-homework-detail-wrapper {
+    padding: 15px 0;
+    padding-top: 35px;
+    font-size: 14px;
+    color: #6F6F6F;
+}
+.student-homework-detail-wrapper .homework-title ,.student-homework-detail-wrapper .homework-content{
+    font-size: 16px;
+    color: #000;
+}
+.student-homework-detail-wrapper .homework-content {
+    padding-top: 7px;
+}
+.student-homework-detail-wrapper .homework-teacher {
+    padding: 0 20px;
+}
+.student-homework-detail-wrapper .homework-teacher-avatar {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 100px;
+    vertical-align: top;
+}
+.student-homework-detail-wrapper .homework-teacher-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+}
+.student-homework-detail-wrapper .homework-teacher-info {
+    display: inline-block;
+    margin-left: 15px;
+}
+.student-homework-detail-wrapper .homework-teacher-name {
+    color: #979797;
+    /* margin-top: 24px;
+    margin-bottom: 10px; */
+}
+.student-homework-detail-wrapper .homework-teacher-name span {
+    
+    padding-left: 5px;
+}
+.student-homework-detail-wrapper .homework-body {
+    padding: 10px 15px;
+    padding-top: 70px;
+}
+.student-homework-detail-wrapper .homework-attachment-headline {
+    color: #44AFB7;
+    height: 35px;
+    line-height: 35px;
+}
+.student-homework-detail-wrapper .homework-attachment-item {
+    height: 45px;
+    display: block;
+    position: relative;
+    background-color: #f6f6f6;
+    margin-bottom: 3px;
+}
+.student-homework-detail-wrapper .homework-attachment-thumb {
+    vertical-align: top;
+    display: inline-block;
+    width: 45px;
+    height: 100%;
+}
+.student-homework-detail-wrapper .homework-attachment-thumb img {
+    width: 100%;
+    height: 100%;
+}
+.student-homework-detail-wrapper .homework-attachment-info {
+    vertical-align: top;
+    display: inline-block;
+    line-height: 45px;
+
+}
+.student-homework-detail-wrapper .homework-attachment-arrow {
+    position: absolute;
+    right: 3px;
+    top:8px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background:url(/assets/img/public/arrow6.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+.student-homework-detail-wrapper .homework-actions-box {
+    text-align: center;
+    margin-top: 25px;
+}
+.student-homework-detail-wrapper .homework-overdue-box {
+    text-align: center;
+    font-size: 16px;
+    color: red;
+}
+.student-homework-detail-wrapper .homework-overdue-icon {
+    display: inline-block;
+    width: 45px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 5px;
+    background: url(/assets/img/homework/homework-time.png) no-repeat 0 0;
+    background-size: 100%;
+}
+.form-actions .homework-submit-btn {
+    background-color: #44AFB7;
+    background-image: none;
+    color: #FFFFFF;
+}
+
+/* 作业提交 */
+.homework-submit-wrapper {
+    padding: 15px;
+    padding-top: 25px;
+}
+.homework-submit-wrapper .form-actions {
+    margin-top: 30px;
+}
+.homework-submit-wrapper .homework-submit-title {
+    position: relative;
+    padding-bottom: 10px;
+}
+.homework-submit-wrapper .homework-attachment-add {
+    color: red;
+    display: block;
+    cursor: pointer;
+    float: right;
+}
+.homework-submit-wrapper .homework-attachment-icon {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(/assets/img/public/attachment.jpg) no-repeat 0 0;
+    background-size: 100%;
+    vertical-align: middle;
+}
+.homework-submit-wrapper .homework-submit-field {
+    padding: 7px;
+    border:1px solid #ddd;
+    height: 120px;
+    margin-bottom: 12px;
+}
+.homework-submit-wrapper .homework-submit-textarea {
+    line-height: 1.2;
+    width: 100%;
+    display: block;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize:none;
+}
+.homework-submit-wrapper .homework-attachment-item {
+    background-color: #F6F6F6;
+    display: block;
+    height: 45px;
+    margin-bottom: 3px;
+    position: relative;
+}
+.homework-submit-wrapper .homework-attachment-thumb {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    width: 45px;
+    position: relative;
+}
+.homework-submit-wrapper .homework-attachment-mask {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    color: #FFF;
+    background-color: rgba(0,0,0,0.5);
+}
+.homework-submit-wrapper .homework-attachment-thumb img {
+    height: 100%;
+    width: 100%;
+}
+.homework-submit-wrapper .homework-attachment-info {
+    display: inline-block;
+    line-height: 45px;
+    vertical-align: top;
+}
+.homework-submit-wrapper .homework-attachment-remove {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+/* 日常表现 */
+.student-news-wrapper {
+
+}
+.student-news-wrapper .news-actions-navbar {
+    background-color: #FFF;
+    padding: 7px 0;
+    border-bottom: 1px solid #b0b0b0;
+}
+.student-news-wrapper .news-actions-link {
+    vertical-align: top;
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    color: #101010;
+    border-right: 1px solid #b0b0b0;
+
+}
+.student-news-wrapper .news-actions-link:last-child {
+    border: none;
+}
+.student-news-wrapper .news-actions-link span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.student-news-wrapper .news-actions-text {
+    font-size: 16px;
+}
+.student-news-wrapper .news-actions-icon {
+    width: 28px;
+    height: 25px;
+}
+.student-news-wrapper .news-icon-text {
+    background: url(/assets/img/news/text.png) no-repeat 0 0;
+    background-size: 100%;
+}
+.student-news-wrapper .news-icon-photo {
+    background: url(/assets/img/news/photo.png) no-repeat 0 0;
+    background-size: 100%;
+}
+.student-news-wrapper .news-icon-video {
+    background: url(/assets/img/news/video.png) no-repeat 0 0;
+    background-size: 100%;
+}
+.student-news-wrapper .news-list {
+    margin: 0 15px;
+    padding: 15px 0;
+}
+.student-news-wrapper .news-item {
+    position: relative;
+    padding: 10px;
+    color: #101010;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #ddd;
+    margin-bottom: 10px;
+}
+.student-news-wrapper .news-header {
+    height: 60px;
+    overflow: hidden;
+}
+.student-news-wrapper .news-avatar ,.news-info {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+.student-news-wrapper .news-avatar {
+    margin-right: 7px;
+    width: 60px;
+    background-color: #ddd;
+}
+.student-news-wrapper .news-avatar img {
+    width: 100%;
+    height: 100%;
+}
+.student-news-wrapper .news-info p {
+    padding-top: 7px;
+}
+.student-news-wrapper .news-body {
+    
+}
+.student-news-wrapper .news-content {
+    padding: 7px 0;
+}
+.student-news-wrapper .news-review-img {
+    margin-left: 15px;
+}
+.student-news-wrapper .news-del-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.student-news-wrapper .news-content-text {
+    white-space: normal;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.student-news-wrapper .news-content-text img{
+    max-width: 30px;
+}
+.student-news-wrapper .news-images-list {
+    
+}
+.student-news-wrapper .news-images-item,.student-news-wrapper .news-videos-item {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 3px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+    max-width: 100px;
+    max-height: 100px;
+    overflow: hidden;
+}
+.student-news-wrapper .news-videos-list {
+    
+}
+.student-news-wrapper .news-videos-item img{
+    max-width: 100%;
+}
+
+
+/* 动态发布 */
+.page-publish-text .publish-photos-wrapper, .page-publish-text .publish-videos-wrapper{
+    display: none;
+}
+.page-publish-photo .publish-videos-wrapper {
+    display: none;
+}
+.page-publish-video .publish-photos-wrapper {
+    display: none;
+}
+.news-publish-wrapper {
+    
+}
+.publish-form-box {
+    padding: 15px;
+    padding-bottom: 0;
+    background-color: #FBFBFB;
+    box-shadow: 0 3px 3px #ddd;
+    
+}
+.publish-textarea-box {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #c5c8cb;
+}
+.publish-textarea-field {
+    width: 100%;
+    min-height: 60px;
+    border: none;
+    line-height: 21px;
+}
+.publish-actions-box {
+    text-align: right;
+    padding: 7px 0px ;
+    position: relative;
+}
+.publish-text-count {
+    color: #868686;
+    display: inline-block;
+    vertical-align: middle;
+}
+.publish-cancel-btn ,.publish-send-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 7px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    box-sizing:content-box;
+}
+.publish-cancel-btn {
+    border: 1px solid #c5c8cb;
+    color: #606060;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF), to(#F8F8F8));
+    background: -webkit-linear-gradient(0% 0% 270deg, #FFF, #F8F8F8);
+    background: -moz-linear-gradient(0% 0% 270deg, #FFF, #F8F8F8);
+    background: -o-linear-gradient(0% 0% 270deg, #FFF, #F8F8F8);
+    background: linear-gradient(0% 0% 270deg, #FFF, #F8F8F8);
+}
+.publish-send-btn {
+    color: #FFF;
+    border: 1px solid #538d00;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#85c429), to(#67a809));
+    background: -webkit-linear-gradient(0% 0% 270deg, #85c429, #67a809);
+    background: -moz-linear-gradient(0% 0% 270deg, #85c429, #67a809);
+    background: -o-linear-gradient(0% 0% 270deg, #85c429, #67a809);
+    background: linear-gradient(0% 0% 270deg, #85c429, #67a809);
+}
+.publish-photos-wrapper {
+    padding: 15px;
+}
+.publish-photo-box {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    background-color: #d9d9d9;
+}
+.publish-photo-box.publish-photo-add {
+    cursor: pointer;
+    background: #d9d9d9 url(/assets/img/news/sprBg.png) no-repeat -244px -4px;
+}
+.publish-photo-cut {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.publish-photo-cut img {
+    width: 100%;
+    height: 100%;
+}
+.publish-photo-remove {
+    right:-10px;
+    top:-10px; 
+    width: 25px;
+    height: 25px;
+    background: url(/assets/img/news/sprBg.png) no-repeat;
+    background-size: 400px auto;
+    -webkit-background-size: 400px auto;
+    text-indent: -9999px;
+    position: absolute;
+}
+.publish-photo-mask {
+    line-height: 60px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+    color: #FFF;
+}
+.publish-photo-mask .photo-status-success {
+    
+}
+.publish-photo-mask .photo-status-error {
+    color: red;
+}
+
+.publish-videos-wrapper {
+    padding: 7px;
+}
+.publish-video-add {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: block;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    background-color: #d9d9d9;
+    cursor: pointer;
+    background: #d9d9d9 url(/assets/img/news/sprBg.png) no-repeat -244px -4px;
+}
+.publish-video-box {
+    word-wrap:break-word;
+    margin-bottom: 3px;
+    background-color: #E6EAF0;
+    padding: 5px 5px;
+}
+.publish-video-link {
+
+}
+.publish-video-link img{
+    height: 25px;
+}
+.publish-video-box {
+
+}
+.publish-video-size {
+    color: #A8ADB8;
+}
+.video-status-error {
+    color: red;
+}
+
+/* 成长记录——成绩表彰 */
+
+.student-score-wrapper {
+    padding: 15px 0;
+}
+.student-score-wrapper .round{
+    margin-bottom: 15px; 
+}
+.student-score-wrapper .score-horizontal-list {
+    margin: 0 15px;
+    padding: 3px 0;
+    letter-spacing: -3px;
+}
+.student-score-wrapper .score-horizontal-title {
+    letter-spacing:normal;
+    display: inline-block;
+    vertical-align: top;
+    width: 18%;
+    text-indent: 8px;
+    text-align: left;
+}
+.student-score-wrapper .score-horizontal-cell {
+    letter-spacing:normal;
+    display: inline-block;
+    vertical-align: top;
+    width: 15%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+.student-score-wrapper .score-average-list {
+    color:#B6B6B6;
+}
+.student-score-wrapper .score-chart-tips {
+    margin: 7px 15px;
+    padding: 4px 7px;
+    color: #737373;  
+    background-color:#EDEDED;
+}
+.student-score-wrapper .score-chart-tips span {
+    padding-right: 3px;
+}
+.student-score-wrapper .chart-tips-block {
+    width: 20px;
+    height: 12px;
+    line-height: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.student-score-wrapper .chart-tips-colorA {
+    background-color: #4AAFB9;
+}
+.student-score-wrapper .chart-tips-colorB {
+    background-color: #FE8A9F;
+}
+.student-score-wrapper .chart-tips-colorC {
+    background-color: #9BD0D6;
+}
+.student-score-wrapper .score-bar-wrapper {
+    margin: 0 15px;
+    letter-spacing: -3px;
+    font-size: 0;
+}   
+.student-score-wrapper .score-bar-item {
+    letter-spacing: normal;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    width: 15%;
+}
+.student-score-wrapper div.score-bar-blank {
+    width: 18%;
+    height: 10px;
+}
+.student-score-wrapper .score-bar-columns {
+    position: relative;
+    width: 52%;
+    margin: 0 auto;
+    height: 150px;
+    overflow: hidden;
+}
+.student-score-wrapper .score-bar-column {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    transition-property:all; 
+    transition-duration:0.5s;
+}
+.student-score-wrapper .score-bar-columnL {
+    left: 0;
+}
+.student-score-wrapper .score-bar-columnR {
+    right: 0;
+}
+.student-score-wrapper .score-bar-columnA {
+    background-color: #4AAFB9;
+}
+.student-score-wrapper .score-bar-columnB {
+    background-color: #FE8A9F;
+}
+.student-score-wrapper .score-bar-columnC {
+    background-color: #9BD0D6;
+}
+.student-score-wrapper .score-bar-tips {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    overflow: hidden;
+}
+.student-score-wrapper .score-vertical-list {
+
+}
+.student-score-wrapper .score-vertical-item {
+    padding: 5px 20px;
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+}
+.student-score-wrapper .score-vertical-cellL {
+    float: left;
+}
+.student-score-wrapper .score-vertical-cellR {
+    float: right;
+}
+.student-score-wrapper .score-vertical-item span {
+    display: block;
+    line-height: 2; 
+}
+.student-score-wrapper .score-vertical-item em {
+    padding: 0 3px;
+    font-size: 18px;
+    font-style: normal;
+}
+.student-score-wrapper .score-vertical-item em.scoreA {
+    color: #4AAFB9;
+}
+.student-score-wrapper .score-vertical-item em.scoreB {
+    color: #FE8A9F;
+}
+.student-score-wrapper .score-vertical-item em.scoreC {
+    color: #B6B6B6;
+}

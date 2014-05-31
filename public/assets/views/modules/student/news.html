@@ -1,0 +1,78 @@
+
+<div class="student-news-wrapper" >
+    <div class="news-actions-navbar">
+        <a href="#/publish/text" class="news-actions-link">
+            <span class="news-actions-icon news-icon-text"></span>
+            <span class="news-actions-text">文字</span>
+        </a>
+        <a href="#/publish/photo" class="news-actions-link">
+            <span class="news-actions-icon news-icon-photo" ></span>
+            <span class="news-actions-text">图片</span>
+        </a>
+        <a href="#/publish/video" class="news-actions-link">
+            <span class="news-actions-icon news-icon-video"></span>
+            <span class="news-actions-text">视频</span>
+        </a>
+    </div>
+    <div class="no-data-box ng-cloak" ng-show="reviewList.length==0 && newsList.length==0">暂无数据</div>
+
+    <div class="news-list">
+        <!-- 学生动态 -->
+        <div class="news-item ng-cloak"  ng-repeat=" data in newsList ">
+            <div class="news-header">
+                <div class="news-avatar">
+                    <img ng-src="{{ data.content.author.avatar }}" alt="">
+                </div>
+                <div class="news-info">
+                    <p ng-bind="data.content.author.name"></p>
+                    <p> {{ data.createtime*1000 | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+                </div>
+            </div>
+            <div class="news-body">
+                <div class="news-content">
+                    <div ng-bind-html="data.content.text" class="news-content-text"></div>
+                    <div class="news-images-list">
+                        <span ng-repeat=" img in data.content.images " class="news-images-item">
+                            <img ng-src="{{ img.url+'!square.75' }}" alt="" data-original="{{ img.url }}">
+                        </span>
+
+                    </div>
+                    <div class="news-videos-list">
+                        <a ng-repeat=" video in data.content.videos " class="news-video-item" ng-href="{{ video.url }}">
+                            <img src="/assets/img/news/video-cover.png" alt="" data-original="{{ video.url }}">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="news-del-btn ng-cloak" ng-show="data.content.isOwner" ng-click="toDeleteView(data)" >删除</a>
+        </div>
+        <!-- 学生日常表现 -->
+        <div class="news-item ng-cloak"  ng-repeat=" data in reviewList ">
+            <div class="news-header">
+                <div class="news-avatar">
+                    <img ng-src="{{ data.operator.avatar }}" alt="">
+                </div>
+                <div class="news-info">
+                    <p ng-bind="data.operator.realname"></p>
+                    <p >{{ data.checktime*1000 | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+                </div>
+            </div>
+            <div class="news-body">
+                <div class="news-content">
+                    <span ng-if="data.groupsurface.attachurl" >
+                        <img ng-src="{{ data.groupsurface.attachurl+'!square.75' }}" alt="" class="news-review-img">
+                    </span>
+                    
+                </div>
+                <div class="news-note" ng-if="data.notes">
+                    备注：<span ng-bind="data.notes"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="show-more-box absence-more-box ng-cloak" ng-click="showMore()" ng-show="flag">
+        <span>点击查看更多</span>
+    </div>
+    
+</div>

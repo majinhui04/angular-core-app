@@ -1,0 +1,42 @@
+<div ng-controller="m.notice.controller as control">
+
+    <div ng-show="control.classData||control.schoolData">
+        <div class="nav nav-tab">
+            <a ng-class="{active:control.action=='class'}" ng-click="control.tab(0)" href="javascript:void(0)">班级动态</a>
+            <a ng-class="{active:control.action=='school'}" ng-click="control.tab(1)" href="javascript:void(0)">学校通知</a>
+        </div>
+        <div class="tab-content">
+
+            <div class="tab-pane">
+                <div class="list-group">
+                    <a ng-href="#/notice/class/{{item.id}}" class="list-group-item" ng-repeat="item in control.classData">
+                        {{item.createtime*1000|date:'yyyy-MM-dd'}}&nbsp;&nbsp;
+                        {{item.title}}
+                    </a>
+                </div>
+            </div>
+
+            <div class="tab-pane">
+                <div class="list-group">
+                    <a ng-href="#/notice/class/{{item.id}}" class="list-group-item" ng-repeat="item in control.classData">
+                        {{item.createtime*1000|date:'yyyy-MM-dd'}}&nbsp;&nbsp;
+                        {{item.title}}
+                    </a>
+                </div>
+                <!--
+                <div class="list-group">
+                    <a ng-href="#/notice/school/{{item.id}}" class="list-group-item" ng-repeat="item in control.schoolData">
+                        {{item.createtime*1000|date:'yyyy-MM-dd'}}&nbsp;&nbsp;
+                        {{item.title}}
+                    </a>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel-body" ng-show="control.articleData">
+        <p ng-bind-html="control.articleData.content"></p>
+    </div>
+
+</div>

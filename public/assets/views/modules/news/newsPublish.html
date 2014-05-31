@@ -1,0 +1,67 @@
+
+<div class="news-publish-wrapper" >
+    <div class="publish-form-box">
+        <div class="publish-textarea-box">
+            <textarea name="content" class="publish-textarea-field" placeholder="说两句吧.." id="content"></textarea>
+        </div>
+            
+        <div class="publish-actions-box">
+            <span class="expreSelect"></span>
+            <span class="publish-text-count" id="pText">500</span>
+            <span class="publish-cancel-btn" ng-click="goBack()">取消</span>
+            <span class="publish-send-btn" ng-click="send()">发送</span>
+        </div>
+    </div>
+    <!-- 表情 -->
+    <div class="expreList"></div>
+
+  
+    <div class="publish-photos-wrapper">
+        <div class="publish-photo-list">
+            <div class="publish-photo-box" ng-repeat=" photo in photoList ">
+                <div class="publish-photo-cut">
+                    <img ng-src="{{ photo.thumbnail }}" alt="" data-original="{{ photo.url }}">
+                </div>
+                <div class="publish-photo-mask">
+                    <span class="publish-photo-status" ng-bind="photo.statusText" ng-class="{success:'photo-status-success', error:'photo-status-error'}[photo.status]"></span>
+                </div>
+                <a href="javascript:void(0)" class="publish-photo-remove ng-cloak" ng-click="removePhoto(photo)" ng-show="photo.url" title="移除照片">移除</a>
+            </div>
+
+            <!-- <div class="publish-photo-box">
+                <div class="publish-photo-cut">
+                    <img src="/assets/data/avatar.jpg" alt="" data-original="/assets/data/avatar.jpg">
+                </div>
+                <div class="publish-photo-mask">
+                    <span class="publish-photo-progress">80%</span>
+                </div>
+                <a href="javascript:void(0)" class="publish-photo-remove" ng-click="removePhoto()" title="移除">移除</a>
+            
+            </div> -->
+         
+
+            <div class="publish-photo-box publish-photo-add" id="photoPicker" title="添加照片" ng-show="photoList.length<photoLimit"></div>
+        </div>
+        <div class="publish-photos-note">最多可上传9张图片</div>
+    
+    </div>
+
+    <div class="publish-videos-wrapper">
+        <span ng-bind-html="aa"></span>
+        <div class="publish-video-add" id="filePicker" title="添加视频" ></div>
+        <div class="publish-video-box" ng-repeat="video in videoList " data-url="{{video.url}}">
+            <span class="publish-video-link"  >
+                <img src="/assets/img/news/video-cover.png" alt="">
+            </span>
+            <span class="publish-video-name">{{video._name}}<span class="publish-video-size">({{video._size}})</span></span>
+            <span class="publish-video-status" ><span ng-class="{error:'video-status-error'}[video.status]">{{video.statusText}}</span></span>
+            <span class="publish-video-action">
+                 <a href="javascript:void(0)" class="publish-video-remove ng-cloak" ng-click="removeVideo(video)" ng-show="video._complete" title="删除视频">删除</a>
+            </span>
+        </div>
+    
+    </div>
+    
+       
+    
+</div>

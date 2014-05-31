@@ -1,0 +1,30 @@
+
+<div class="student-homework-wrapper" >
+
+    <div class="no-data-box ng-cloak" ng-show="dataList.length==0">暂无数据</div>
+    <div class="homework-list">
+        <a class="homework-item ng-cloak" ng-repeat=" data in dataList " ng-href="#/student/homework/{{data.id}}">
+            <div class="homework-category">
+                {{ data.course.name }}
+                <span class="homework-category-arrow"></span>
+            </div>
+
+            <div class="homework-title">
+                {{ data.homework.name }}
+            </div>
+            <div class="homework-content">
+               {{ data.homework.description }}
+            </div>
+            <div class="homework-info">
+                <span class="homework-teacher">{{ data.teacher.name }}</span>
+                <span class="homework-starttime">开始 {{ data.homework.createtime*1000 | date: 'MM-dd' }}</span>
+                <span class="homework-endtime">截止 {{ data.homework.closetime*1000 | date: 'MM-dd' }}</span>
+            </div>
+            <div class="homework-item-bg"></div>
+        </a>
+    </div>
+    <div class="show-more-box absence-more-box ng-cloak" ng-click="showMore()" ng-show="flag">
+        <span>点击查看更多</span>
+    </div>
+    
+</div>

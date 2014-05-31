@@ -1,0 +1,38 @@
+
+<div class="student-homework-detail-wrapper" >
+    <div class="homework-teacher">
+      
+        <div class="homework-title">{{ data.homework.name }}</div>
+        <div class="homework-teacher-name">{{ data.teacher.name }} <span class="ng-cloak "ng-bind="data.homework.createtime*1000 | date: 'MM月dd日 hh:mm'"></span></div>
+        <div class="homework-content">{{ data.homework.description }}</div>
+    </div>
+    <div class="homework-body">
+
+        <div class="homework-attachment" ng-show="data._attachmentList">
+            <div class="homework-attachment-headline">作业附件</div>
+            <div class="homework-attachment-list">
+                <a href="javascript:void(0)" class="homework-attachment-item" ng-repeat="attachment in data._attachmentList"  ng-class="{'image':'homework-attachment-image'}[attachment._type]">
+                    <div class="homework-attachment-thumb">
+                        <img ng-src="{{ attachment._thumb }}" alt="" data-original="{{attachment.url}}">
+                    </div>
+                    <div class="homework-attachment-info">
+                        <span class="homework-attachment-name" >
+                            {{ attachment._name }}
+                        </span>
+                        <span class="homework-attachment-arrow"></span>
+                    </div>
+                </a>
+              
+            </div>
+        </div>
+        <div class="homework-overdue-box" ng-if="data.isclosed==1">
+            <i class="homework-overdue-icon"></i>
+            <span>时间到，已截止</span>
+        </div>
+        <div class="form-actions homework-actions-box">
+            <a ng-href="#/student/homework/submit/{{data.id}}" class="m-btn one-btn homework-submit-btn ng-cloak" ng-show="(data.workstatus==10 || data.workstatus==0) && data.isclosed==0"><span ng-bind="{0:'提交作业',10:'修改作业'}[data.workstatus]"></span></a>
+        </div>
+
+    </div>
+    
+</div>

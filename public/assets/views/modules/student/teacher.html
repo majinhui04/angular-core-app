@@ -1,0 +1,51 @@
+
+
+    <div class="student-teacher-wrapper" >
+        <div class="teacher-list">
+            <div class="teacher-item ng-cloak" ng-repeat="teacher in teacherList">
+                <div class="teacher-avatar">
+                    <img ng-src="{{teacher.avatar}}" alt="">
+                </div>
+                <div class="teacher-info">
+                    <p class="teacher-name-field">
+                        <span class="title">姓名:</span>
+                        <span class="content" ng-bind="teacher.name"></span>
+                    </p>
+                    <p class="teacher-mobile-field">
+                        <span class="title">手机:</span>
+                        <span class="content">
+                            <a href="tel://{{teacher.mobile}}" ng-bind="teacher.mobile"></a>
+                        </span>
+                    </p>
+                    <p class="teacher-weixin-field">
+                        <span class="title">微信:</span>
+                        <span class="content" ng-bind="teacher.weixin"></span>
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="teacher-item">
+                <div class="teacher-avatar">
+                    <img src="/assets/img/public/avatar-80.png" alt="">
+                </div>
+                <div class="teacher-info">
+                    <p class="teacher-name-field">
+                        <span class="title">姓名:</span>
+                        <span class="content">飒飒大</span>
+                    </p>
+                    <p class="teacher-mobile-field">
+                        <span class="title">手机:</span>
+                        <span class="content">
+                            <a href="tel://18042324007">18045121515</a>
+                        </span>
+                    </p>
+                    <p class="teacher-weixin-field">
+                        <span class="title">微信:</span>
+                        <span class="content">aadakdla</span>
+                    </p>
+                </div>
+            </div> -->
+        </div>
+        
+     
+    </div>
+   

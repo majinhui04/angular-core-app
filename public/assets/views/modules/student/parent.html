@@ -1,0 +1,31 @@
+
+<div class="student-parent-wrapper ">
+    <form role="form" name="submitForm">
+         <ul class="round form-input-list">
+            <li class="">
+                <span class="input-label">姓名:</span>
+                <div class="input-field">
+                    <input type="text" class="input-control" ng-model="formData.name" placeholder="姓名必填">
+                </div>
+            </li>
+            <li class="">
+                <span class="input-label">手机:</span>
+                <div class="input-field">
+                    <input type="text" class="input-control" ng-model="formData.mobile">
+                </div>
+            </li>
+            <li class="">
+                <span class="input-label">微信:</span>
+                <div class="input-field">
+                    <input type="text" class="input-control" ng-model="formData.weixin">
+                </div>
+            </li>
+
+        </ul>
+        <div class="form-actions">
+            <button class="m-btn m-btn-success one-btn" ng-click="save()">保存</button>
+        </div>   
+    </form>
+    
+</div>
+

@@ -1,0 +1,75 @@
+<!-- 自己查看 -->
+<div class="user-album-wrapper ng-cloak" ng-show="isOwner">
+    
+    <div class="album-list-actions">
+        <button ng-click="toAddView($event)" class="album-add-btn" data-toggle="modal" data-target="#albumModal">新建相册</button>
+    </div>
+   
+
+    <div class="album-list">
+        <div class="album-item  ng-cloak" ng-repeat="album in albumList">
+            <div class="album-item-data " ng-swipe-left="swipeLeft(album,$event)" ng-swipe-right="swipeRight(album,$event)">
+                <div class="album-cover">
+                    <img ng-src="{{album.url}}" >
+                </div>
+                <div class="album-info">
+                    <a href="#/user/album/{{ album.id }}" class="arrow" >
+                        <span class="album-name">{{album.name}}</span>
+                        <span class="album-photo-count">({{album.photocount}})</span>
+                    </a>
+                </div>
+            </div>
+            <div class="album-item-actions">
+                <span class="album-action-delete" ng-click="toDeleteView(album)">删除</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="no-data-box ng-cloak" ng-show="albumList.length==0">暂无数据</div>
+</div>
+
+<!-- 他人查看 -->
+<div class="user-album-wrapper ng-cloak" ng-show="!isOwner">
+
+    <div class="album-list">
+        <div class="album-item  ng-cloak" ng-repeat="album in albumList">
+            <div class="album-item-data " >
+                <div class="album-cover">
+                    <img ng-src="{{album.url}}" >
+                </div>
+                <div class="album-info">
+                    <a href="#/{{ uid }}/user/album/{{ album.id }}" class="arrow" >
+                        <span class="album-name">{{album.name}}</span>
+                        <span class="album-photo-count">({{album.photocount}})</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="no-data-box ng-cloak" ng-show="albumList.length==0">暂无数据</div>
+</div>
+<!-- 编辑相册 -->
+<div class="modal fade user-album-modal" id="albumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form role="form" name="albumForm">
+                    <div class="form-input-list">
+                        <div class="album-name-group">
+                            <span class="input-label">名称:</span>
+                            <div class="input-field">
+                                <input type="text" class="form-control album-name-input" ng-model="formData.name">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" ng-click="saveAlbum(formData)" data-dismiss="modal">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+

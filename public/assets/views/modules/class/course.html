@@ -1,0 +1,61 @@
+
+
+    <div class="class-courese-wrapper" >
+        <div class="weekday-nav">
+            <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(1)" ng-class="{true:'active'}[1==activeDay]">
+                <span class="">一</span>
+            </a>
+             <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(2)" ng-class="{true:'active'}[2==activeDay]">
+                <span>二</span>
+            </a>
+             <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(3)" ng-class="{true:'active'}[3==activeDay]">
+                <span>三</span>
+            </a>
+             <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(4)" ng-class="{true:'active'}[4==activeDay]">
+                <span>四</span>
+            </a>
+             <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(5)" ng-class="{true:'active'}[5==activeDay]">
+                <span>五</span>
+            </a>
+             <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(6)" ng-class="{true:'active'}[6==activeDay]">
+                <span>六</span>
+            </a>
+             <a href="javascript:;" class="weekday-item" ng-click="weekDayChange(7)" ng-class="{true:'active'}[7==activeDay]">
+                <span>日</span>
+            </a>
+        </div>
+        <div class="course-list-wrapper">
+            <div class="course-list ng-cloak" ng-repeat=" courses in classCourseData" ng-show="activeDay == ($index+1)">
+                <div class="course-item ng-cloak" ng-repeat=" course in courses ">
+                    <span class="course-time">{{ course._name }} ({{ course.time.start }}-{{ course.time.end }})</span>
+                    <span class="course-name">{{ course.course.name }}</span>
+                    <span class="course-teacher">{{ course.teacher.name }}</span>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <!-- <div class="course-list-wrapper">
+            <div class="course-list" ng-repeat=" day in classCourseData">
+                <div class="course-item">
+                    <span class="course-time">第一节课(8:00:8:45)</span>
+                    <span class="course-name">语文</span>
+                    <span class="course-teacher">老王</span>
+                </div>
+                <div class="course-item">
+                    <span class="course-time">第二节课(9:00:9:45)</span>
+                    <span class="course-name">语文</span>
+                    <span class="course-teacher">老王</span>
+                </div>
+                <div class="course-item">
+                    <span class="course-time">第三节课(9:00:9:45)</span>
+                    <span class="course-name">语文</span>
+                    <span class="course-teacher">老王</span>
+                </div>
+            </div>
+        </div> -->
+            
+        
+    </div>
+   

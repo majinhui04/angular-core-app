@@ -1,0 +1,160 @@
+
+<div class="page-student-profile"  >
+    <div class="page-container" >
+        <header class="header">
+            <div class="banner">
+                <img src="/assets/img/student/header-bg.png">
+            </div>
+            <div class="touxiang">
+                <span class="touxiang-box"><img ng-src="{{student.avatar}}" ></span>
+                <span class="touxiang-name" ng-bind="student.name"></span>
+            </div>
+        </header>
+        <!-- <div style="width:50px;height:50px;background:red url(/assets/img/mdialog/info.png) no-repeat 0 0;background-size: 100% 100%;"></div> -->
+     
+        <nav ng-show="isOwner" class="ng-cloak">
+            <ul class="round">
+                <li>
+                    <span class="item"><span class="right" ng-bind="student._className"></span>班级 </a>
+                </li>
+                <li>
+                    <span  class="item arrow" data-toggle="modal" data-target="#sexModal" ng-click="toSexEditView()"><span class="right" ng-bind="{0:'未知',1:'男',2:'女'}[student.sex]"></span>性别</span>
+                </li>
+                <li>
+                    <span class="item arrow" data-toggle="modal" data-target="#birthModal" ng-click="toBirthEditView()"><span class="right" ng-bind="student.profile.birthday"></span>生日 </span>
+                </li>
+                <li>
+                    <a href="#/student/father" class="item arrow"><span class="right" ng-bind="student._fatherName"></span>我的爸爸 </a>
+                </li>
+                <li>
+                    <a href="#/student/mother" class="item arrow"><span class="right" ng-bind="student._motherName"></span>我的妈妈 </a>
+                </li>
+                <li>
+                    <a href="#/student/teacher" class="item arrow">我的老师</a>
+                </li>
+                <li>
+                    <a href="http://baby.igrow.cn/" class="item arrow">成长档案</a>
+                </li>
+                <li>
+                    <a href="#/student/attence" class="item arrow">我的考勤</a>
+                </li>
+                <li>
+                    <a href="#/class/course" class="item arrow">班级课程</a>
+                </li>
+            </ul>
+            
+            <ul class="round">
+                <li ng-show="student._album.length==0">
+                    <a href="#/user/album" class="item arrow">我的相册</a>
+                </li>
+                <li ng-show="student._album.length>0">
+                   
+                    <div class="headline" >我的相册</div>
+                    <a href="#/user/album" class="item arrow" >
+                        <span class="album-thumb-box" ng-repeat="album in student._album">
+                            <img ng-src="{{ album.url }}" alt="">
+                        </span>
+
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="round">
+                <li>
+                    <a href="#/user/password" class="item arrow">修改密码</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav ng-show="!isOwner" class="ng-cloak">
+            <ul class="round">
+                <li>
+                    <span class="item"><span class="right" ng-bind="student._className"></span>班级 </a>
+                </li>
+                <li>
+                    <span  class="item " ><span class="right" ng-bind="{0:'未知',1:'男',2:'女'}[student.sex]"></span>性别</span>
+                </li>
+                <li>
+                    <span class="item"><span class="right" ng-bind="student.profile.birthday"></span>生日 </span>
+                </li>
+                <li>
+                    <span class="item"><span class="right" ng-bind="student._parents"></span>家长姓名 </span>
+                </li>
+                <li>
+                    <span class="item"><span class="right" ng-bind="student.mobile"></span>联系方式 </span>
+                </li>
+            </ul>
+            
+            <ul class="round">
+                <li class="ng-cloak" ng-show="student._album.length==0">
+                    <a href="#/{{student.uid}}/user/album" class="item arrow">我的相册</a>
+                </li>
+                <li class="ng-cloak" ng-show="student._album.length>0">
+                   
+                    <div class="headline" >我的相册</div>
+                    <a href="#/{{student.uid}}/user/album" class="item arrow" >
+                        <span class="album-thumb-box" ng-repeat="album in student._album">
+                            <img ng-src="{{ album.url }}" alt="">
+                        </span>
+
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+    </div>
+   
+    <!-- sex -->
+    <div class="modal fade student-sex-modal" id="sexModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" name="sexForm">
+                        <div class="student-sex-group">
+                            <span class="student-sex-label">性别:</span>
+                            <div class="student-sex-select-box">
+                                <select class="student-sex-select" name="sexSelect" ng-options="option.id as option.name for option in sexList" ng-model="sexFormData.sex"></select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" ng-click="updateSex()" data-dismiss="modal">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- birth -->
+    <div class="modal fade student-birth-modal" id="birthModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form role="form" name="birthForm">
+                        <div class="student-birth-group">
+                            <!-- <label class="student-birth-label control-label">生日</label> -->
+                            <div class="student-birth-select-box">
+                                <select class="student-birth-select" name="yearSelect" ng-options="option.id as option.name for option in yearList" ng-model="birthFormData.year"></select>
+                                <span>年</span>   
+                                <select class="student-birth-select" name="monthSelect" ng-options="option.id as option.name for option in monthList" ng-model="birthFormData.month"></select>
+                                <span>月</span>
+                                <select class="student-birth-select" name="daySelect" ng-options="option.id as option.name for option in dayList" ng-model="birthFormData.day"></select>
+                                <span>日</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" ng-click="updateBirth()" data-dismiss="modal">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+</div>
+</html>

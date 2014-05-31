@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>IGrow 微信客户端</title>
+</head>
+<body>
+    <section ng-view></section>
+    <script type="text/javascript" src="http://assets.haoyuyuan.com/vendor/libs/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+        window.IGrow = {};
+        $(function () {
+            var exists = {},
+                preload = ['assets/js/config/app.config.js?t=' + new Date().valueOf() / 1000],
+                autoload = {
+                    style: function (url, element) {
+                        element = document.createElement('link');
+                        element.rel = 'stylesheet';
+                        element.type = 'text/css';
+                        element.href = url;
+                        (document.head || document.getElementsByTagName('head')[0]).appendChild(element);
+                    },
+                    script: function (url, element) {
+                        element = document.createElement('script');
+                        element.type = 'text/javascript';
+                        element[document.addEventListener ? 'onload' : 'onreadystatechange'] = function (_, isAbort) {
+                            if (isAbort || !element.readyState || /loaded|complete/.test(element.readyState)) {
+                                if (exists) {
+                                    $.each([
+                                        { list: preload, call: function (key, val, match) { exists[match[3]] = { key: key, val: match[1] } } },
+                                        { list: window.IGrow.Config.preload, call: function (key, val, match) { exists[match[3]] && exists[match[3]].val === match[1] ? preload.splice(exists[match[3]].key, 1, val) : preload.push(val) } }
+                                    ], function (index, item) { $.each(item.list, function (key, val, match) { if (typeof val === 'string' && /\.js|\.css/.test(val)) { !(match = val.match(/(.*)\/(\d|\d.*\d)\/(.*[\.css|\.js])/)) && (match = val.match(/(.*)\/(.*[\.css|\.js])/)) && match.splice(2, 0, 0); match && item.call(key, val, match); } }) });
+                                    $.each(preload, function (index, item) { if (/\.css/.test(item)) { autoload.style(preload.splice(index, 1)) } });
+                                    exists = null;
+                                }
+                                preload.length && autoload.script(preload.splice(0, 1));
+                                document.body.removeChild(element);
+                            }
+                        };
+                        element.src = url;
+                        document.body.appendChild(element)
+                    }
+                };
+            autoload.script(preload.splice(0, 1));
+        });
+    </script>
+</body>
+</html>

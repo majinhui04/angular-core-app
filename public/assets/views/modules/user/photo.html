@@ -1,0 +1,67 @@
+
+<div class="user-photo-wrapper">
+   
+    <div class="photo-list-actions clearfix ng-cloak" ng-show="isOwner">
+        <span class="photo-add-btn" ng-click="toAddView()">上传照片</span>
+        <span class="photo-edit-btn ng-cloak" ng-click="toActionView()" ng-show="photoStatus=='normal'">更多操作</span>
+        <span class="photo-edit-btn ng-cloak" ng-click="toNormalView()" ng-show="photoStatus=='edit'">取消操作</span>
+    </div>
+   
+   
+    <div class="photo-list photoLayoutList" id="photoLayoutList">
+        <div class="photo-item photoLayoutItem ng-cloak" ng-repeat="photo in photoList" data-checked="false">
+            <div class="photo-wrap">
+                <img ng-src="{{ photo.thumbnail }}" alt="" data-original="{{photo.url}}" data-uuid="{{ photo.id }}">
+            </div>
+            <div class="photo-selected-box"><span class="photo-selected-icon"></span></div>
+        </div>
+       
+
+    </div>
+    <div class="no-data-box ng-cloak" ng-show="photoList.length==0">暂无数据</div>
+ 
+   
+    
+    <!-- 照片操作选项 -->
+    <div class="m-modal ng-cloak" ng-show="isShowOptions"></div>
+    <div class="m-options-box ng-cloak" ng-class="optionsClass">
+        <div class="m-options-list">
+            <div class="m-options-item" ng-click="toEditAlbumView()" data-toggle="modal" data-target="#albumModal">编辑相册</div>
+            <div class="m-options-item" ng-click="toEditPhotoView()" ng-show="photoList.length>0">批量管理照片</div>
+        </div>
+        <div class="m-options-actions">
+            <div class="options-cancel-btn" ng-click="toNormalView()">取消</div>
+        </div>
+    </div> 
+
+    <!-- 删除 -->
+    <div class="photo-actions-box ng-cloak" ng-show="photoStatus == 'edit'">
+        <button class="btn btn-danger photo-bulkdelete-btn" ng-click="toDeleteView()">删除</button>
+    </div>
+
+</div>
+
+
+<!-- 编辑相册 -->
+<div class="modal fade user-album-modal" id="albumModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form role="form" name="albumForm">
+                    <div class="form-input-list">
+                        <div class="album-name-group">
+                            <span class="input-label">名称:</span>
+                            <div class="input-field">
+                                <input type="text" class="form-control album-name-input" ng-model="formData.name">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" ng-click="updateAlbum(formData)" data-dismiss="modal">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
