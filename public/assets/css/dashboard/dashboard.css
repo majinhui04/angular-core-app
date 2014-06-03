@@ -1,0 +1,190 @@
+.dashboard-wrapper {
+    margin: 0;
+    padding: 0;
+}
+.dashboard-header {
+    height: 60px;
+    background-color: #212121;
+}
+.dashboard-header .dropdown-menu {
+    right: 0;
+    left:auto;
+}
+.dashboard-header .user .dropdown-toggle {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 15px;
+    display: block;
+}
+.dashboard-header .user .dropdown-toggle:hover, .dashboard-header .user .dropdown-toggle:active,
+.dashboard-header .user .dropdown-toggle:focus{
+    background-color: #383838;
+}
+.dashboard-header .brand {
+    display: inline-block;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 225px;
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+}
+.dashboard-body {
+    position: relative;
+}
+.dashboard-body:after{
+    content: "xxoo";
+    height: 0;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+}
+.dashboard-sidebar { 
+    float: left;
+    width: 220px;
+    background-color: #3d3d3d;
+    height: 500px;
+}
+.dashboard-sidebar .sidebar-header {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #d72324;
+    margin-bottom: 7px;
+}
+.dashboard-sidebar .logo-text {
+    font-size: 24px;
+    color: #FFF;
+}
+
+
+.sidebar-menu > li {
+    position: relative;
+}
+.sidebar-menu > li:first-child > a {
+    border-top: none;
+} 
+.sidebar-menu > li > a {
+    color: #ffffff ;
+    display: block;
+    position: relative;
+    margin: 0;
+    border: 0px;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    border-top: 1px solid #5c5c5c ;
+}
+.sidebar-menu > li > a:hover, .sidebar-menu > li:hover > a {
+    background: #303030;
+}
+.sidebar-menu > li.active > a {
+    background: #e02222;
+    border-top-color: transparent ;
+    color: #ffffff;
+}
+.sidebar-menu > li > a i {
+    font-size: 16px;
+    margin-right: 5px;
+    text-shadow: none;
+}
+.sidebar-menu > li.active > a .selected {
+    display: block;
+    width: 8px;
+    height: 25px;
+    background-image: url("/assets/img/dashboard/sidebar-menu-arrow.png");
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: 8px;
+}
+.sidebar-menu > li > a > .arrow.open:before {
+    float: right;
+    margin-top: 1px;
+    margin-right: 3px;
+    display: inline;
+    font-family: FontAwesome;
+    height: auto;
+    font-size: 16px;
+    content: "\f107";
+    font-weight: 300;
+    text-shadow: none;
+}
+.sidebar-menu > li > ul.sub-menu > li > a {
+    color: #bdbdbd;
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0px;
+    padding-left: 44px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    background: none;
+}
+.sidebar-menu > li > ul.sub-menu > li > a:hover,.sidebar-menu > li > ul.sub-menu > li > a.active{
+    background: #575757 ;
+}
+/* .sidebar-item a {
+    display: block;
+    color: #d7cffa;
+    padding: 7px 0 ;
+    font-size: 14px;
+    padding-left: 30px;
+    border-left: 3px solid transparent;
+}
+.sidebar-sub-item a:hover , .sidebar-sub-item a.active {
+    background-color: #24242C;
+    border-left: 3px solid #d72324;
+    color: #FFF;
+}
+.sidebar-sub-list .sidebar-item a {
+    padding: 7px 0 ;
+    padding-left:55px; 
+} */
+
+
+
+
+
+
+
+
+
+.dashboard-content {
+    margin-left: 220px;
+    overflow: hidden;
+    background-color: #fff;
+    height: 500px;
+}
+.dashboard-breadcrumb {
+    background-color: #FFF;
+    border-bottom: 1px solid #ddd;
+}
+.dashboard-breadcrumb a {
+    padding: 8px 20px 8px 10px;
+    display: inline-block;
+    background: url('/assets/img/dashboard/breadcrumb.png') no-repeat center right;
+    font-size: 12px;
+    color: #666666;
+}
+.dashboard-breadcrumb a:hover {
+    color: #333333;
+}
+.dashboard-breadcrumb a.current {
+    font-weight: bold;
+    color: #444444;
+    background-image: none;
+}
+
+
+.dashboard-footer {
+    padding: 8px 20px 5px 20px;
+    font-size: 12px;
+}
+.dashboard-footer .footer-inner{
+    color: #999999;
+}

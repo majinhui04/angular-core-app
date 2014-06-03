@@ -6,8 +6,9 @@ define(function(require, exports, module) {
     "use strict";
     var Utils = require('utils');
     require('angular-route');
+    require('angular-sanitize')
 
-    var IGrow = window['IGrow'];
+    var Boss = window['Boss'];
     var app = angular.module('angular-core', ['ngRoute','ngSanitize']);
 
     /**/
@@ -17,20 +18,21 @@ define(function(require, exports, module) {
         $provide.factory('routeConfig', ['$http', function ($http) {
             return function (routes) {
 
-                var modules = IGrow.modules,dir = IGrow.dir;
+                var modules = Boss.modules,dir = Boss.dir;
 
                 angular.forEach(modules, function(module , i) {
-                    var config = {
-                        body:module.body,
-                        title:module.title,
-                        templateUrl:dir + '/assets/views/' +  module.view
-                    },
+                    var templateUrl = ( module.view.indexOf('/')===0  )?module.view:dir + '/assets/views/' +  module.view,
+                        config = {
+                            body:module.body,
+                            title:module.title,
+                            templateUrl:templateUrl
+                        },
 
                     route = module.route;
                     // 假如需要动态加载controller
                     if(module.path){
                         config.controller = module.controller;
-                        config.controllerUrl = dir + '/assets/js/' + module.path;
+                        config.controllerUrl = ( module.path.indexOf('/')===0  )?module.path:dir + '/assets/js/' +  module.path;
                     }else{
                         config.controller = function(){
                             
@@ -47,24 +49,18 @@ define(function(require, exports, module) {
                     },
                     template: '<div style=" text-align:center;padding:15px;">404</div>'
 
-                }).when('/profile',{
-                    title:'我的资料',
+                }).when('/dashboard',{
+                    title:'',
                     controller: function($scope, $routeParams, $location) {
-                        var IGrow = window['IGrow'], user = IGrow.user;
-
-                        if(user.typeid == 4){
-                            $location.path('/student/profile');
-                        }else{
-                            $location.path('/teacher/profile');
-                        }
+                        console.log('dashboard')
                         
                     },
-                    template: ''
+                    template: 'welcome here'
 
                 }).when('/schoolday',{
                     title:'请假考勤',
                     controller: function($scope, $routeParams, $location) {
-                        var IGrow = window['IGrow'], user = IGrow.user;
+                        var Boss = window['Boss'], user = Boss.user;
 
                         if(user.typeid == 4){
                             $location.path('/student/schoolday');
@@ -157,8 +153,18 @@ define(function(require, exports, module) {
                         dataType = opts.dataType || 'json',
                         timeout = opts.timeout || 60 * 1000,
                         context = opts.context || self,
+                        host = 'http://'+location.host,
+                        key = url.replace(host,''),
+                        API = window["API"],
+                        match,
                         config = {};
 
+                    //console.log('url',url)
+                    //
+                    if(match = API['map'][key]){
+                        url = match.server?match.server:match.local;
+                        console.log('api map match',match)
+                    }
                     config = {
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded'
@@ -181,7 +187,7 @@ define(function(require, exports, module) {
                     $http(config).success(function(data, status, headers, config) {
                         var message;
                 
-                        if (data.code && data.code != 0) {
+                        if (data.code && data.code >200) {
 
                             message = data.message;
                             deferred.reject({
@@ -200,14 +206,6 @@ define(function(require, exports, module) {
                     }).error(function(data, status, headers, config) {
                         var message = '';
                         
-                        if(data.code && data.code != 0){
-                            message = data.message;
-                            // 若未登录
-                            if(data.code == 10020002){
-                                var hash = location.hash || '';
-                                location.href = 'http://auth.igrow.cn/auth/login?from=AUTH&go=http://m.igrow.cn/main?hash=' + hash.replace('#/','');
-                            }
-                        }
                         failCallback && failCallback(data);
                         deferred.reject({
                             status:status,
@@ -303,8 +301,9 @@ define(function(require, exports, module) {
                 if (url.indexOf('http://') > -1) {
                     url = url;
                 } else {
-                    url = window['IGrow']['api'] + url;
+                    url = window['Boss']['api'] + url;
                 }
+             
                 resourse = {
                     url: url,
                     list: function(data, successCallback, failCallback,always) {
@@ -361,7 +360,7 @@ define(function(require, exports, module) {
                         return function(data, successCallback, failCallback,always) {
                             var data = data || {};
 
-                            url = url + '/' + action;
+                            url = resourse['url'] + '/' + action;
 
                             data = jQuery.extend({}, params, data);
 

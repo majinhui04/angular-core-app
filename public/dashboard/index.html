@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <title>my dashboard app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="Pragma" content="no-cache" />  
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="max-age=0"/> 
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="stylesheet" type="text/css" href="/assets/js/vendor/libs/bootstrap/3.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/public/common.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/dashboard/dashboard.css">
+</head>
+<body ng-controller="dashboardCtrl" class="dashboard-wrapper">
+    <div class="dashboard-header">
+        <a href="javascript:void(0);" class="brand">
+            MBA
+        </a>
+        <div class="pull-right">
+            <div class="dropdown user">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                    <img alt="" src="/assets/data/avatar1_small.jpg">
+                    <span class="username" ng-bind="user.name"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-user">
+                            </i>
+                            修改密码
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">
+                            <i class="fa fa-key">
+                            </i>
+                            退出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-body">
+        <div class="dashboard-sidebar">
+            <!-- <div class="sidebar-header">
+                <span class="logo">
+                </span>
+                <span class="logo-text">
+                    MBA
+                </span>
+            </div> -->
+            <ul class="sidebar-menu">
+                <li class="start active">
+                    <a href="#/dashboard" class="sidebar-menu-link" data-title="Dashboard">
+                        <i class="fa fa-home">
+                        </i>
+                        <span class="title">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+                <li class=" ">
+                    <a href="#/test" class="sidebar-menu-link" data-title="Test">
+                        <i class="icon-bar-chart">
+                        </i>
+                        <span class="title">
+                            Test
+                        </span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="javascript:void(0)" >
+                        <i class="fa fa-gift">
+                        </i>
+                        <span class="title">
+                            基本设置
+                        </span>
+                        <span class="selected" data-role="selected">
+                        </span>
+                        <span class="arrow open">
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="#/test11" class="sidebar-menu-link" data-title="关于我们">
+                                关于我们
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="javascript:void(0)" class="sidebar-menu-link active" data-title="团队介绍">
+                                团队介绍
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="javascript:void(0)" class="sidebar-menu-link" data-title="业务介绍">
+                                业务介绍
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" open">
+                    <a href="javascript:void(0)" >
+                        <i class="fa fa-gift">
+                        </i>
+                        <span class="title">
+                            活动
+                        </span>
+                        <span class="" data-role="selected">
+                        </span>
+                        <span class="arrow open">
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="javascript:void(0)" class="sidebar-menu-link" data-title="活动管理">
+                                活动管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" open">
+                    <a href="javascript:void(0)" >
+                        <i class="fa fa-gift">
+                        </i>
+                        <span class="title">
+                            文章
+                        </span>
+                        <span class="">
+                        </span>
+                        <span class="arrow open">
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="javascript:void(0)" class="sidebar-menu-link">
+                                文章管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" open">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-gift">
+                        </i>
+                        <span class="title">
+                            招聘
+                        </span>
+                        <span class="">
+                        </span>
+                        <span class="arrow open">
+                        </span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="">
+                            <a href="javascript:void(0)" class="sidebar-menu-link">
+                                招聘管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+               
+            </ul>
+        </div>
+        <div class="dashboard-content">
+            <div class="dashboard-breadcrumb">
+                <a href="javascript:void(0)" data-original-title="Go to Home">
+                    <i class="fa fa-home">
+                    </i>
+                    首页
+                </a>
+                <a href="javascript:void(0)" class="current">
+                    
+                </a>
+            </div>
+            <!-- data-ng-view data-ng-cloak -->
+            <div class="dashboard-view" data-ng-view data-ng-cloak>
+            </div>
+        </div>
+    </div>
+    <div class="dashboard-footer">
+        <div class="footer-inner">
+            2014 ©copyright by xxoo.
+        </div>
+    </div>
+    <script type="text/javascript" src="/assets/js/vendor/libs/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/libs/angularjs/1.2.14/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/libs/angularjs/1.2.14/angular-sanitize.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/libs/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/libs/seajs/2.0.0/sea.js"></script>
+    <script type="text/javascript" src="/assets/js/config/api.js"></script>
+    <script type="text/javascript" src="/assets/js/config/seajs-config.js"></script>
+    <script>
+        seajs.use(['dashboardApp'],
+        function(app) {
+            angular.bootstrap(document, [app.name]);
+        });
+    </script>
+</body>
+</html>

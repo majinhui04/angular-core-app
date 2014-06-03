@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>登录</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="/assets/js/vendor/libs/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/public/common.css">
+        <style>
+        #loginbox {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 70px;
+        }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="loginbox" ng-controller="loginCtrl">  
+                 
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label  class="col-sm-2 control-label">邮箱</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control"  placeholder="Email" ng-model="formData.email">
+                </div>
+              </div>
+              <div class="form-group">
+                <label f class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control"  placeholder="Password" ng-model="formData.password">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> 记住我
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn btn-default" ng-click="login()">登录</button>
+                </div>
+              </div>
+            </form>
+        </div>
+
+
+    <script type="text/javascript" src="/assets/js/vendor/libs/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/libs/angularjs/1.2.14/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/js/vendor/libs/seajs/2.0.0/sea.js"></script>
+    <script type="text/javascript" src="/assets/js/config/api.js"></script>
+    <script type="text/javascript" src="/assets/js/config/seajs-config.js"></script>
+        <script>
+            seajs.use(['loginApp'],function(app) {
+                angular.bootstrap(document, [app.name]);
+            });
+        </script>
+    </body>
+
+</html>

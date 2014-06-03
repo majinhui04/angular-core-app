@@ -6,7 +6,7 @@ body,html{
     height: 100%;
 }
 body{
-    font-family:'黑体','微软雅黑','Tahoma','Arial','Helvetica Neue',sans-serif;
+    font-family:'微软雅黑','Tahoma','Arial','Helvetica Neue',sans-serif;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 a {
@@ -52,7 +52,7 @@ ul.round {
     font-size: 16px;
     color: #101010;
 }
-.round .arrow , .arrow {
+.round .arrow {
     cursor: pointer;
     display: block;
     background: url('../../img/public/arrow3.png') no-repeat right 50%;
